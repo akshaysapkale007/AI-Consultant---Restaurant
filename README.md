@@ -3,9 +3,6 @@
 ### Your Restaurant's Data is a Goldmine. This Agent Turns It Into a $47K Strategy—In 4 Minutes.
 
 Not a dashboard. Not a chatbot. **A fully autonomous business strategist.**
-
-<img src="assets/dashboard_hero.png" width="500" alt="Executive Dashboard">
-
 ---
 
 ## 🎯 The Problem
@@ -68,34 +65,44 @@ The first deployment identified **$47,000+ in annual revenue opportunities** the
 
 RestoAI isn't a simple script wrapper. It operates on a **Perception-Reasoning-Action** loop designed to mimic a human analyst's workflow:
 
-```mermaid
-flowchart LR
-    subgraph PERCEIVE ["🔍 PERCEIVE (Python)"]
-        direction TB
-        DATA["Raw POS Logs<br/>(Toast/Square)"] --> ETL["ETL & Data<br/>Normalization"]
-        ETL --> STATS["15+ Statistical<br/>Engines"]
+flowchart TB
+    subgraph Input["📊 Data Ingestion"]
+        CSV["POS Export Files<br/>(Multiple CSVs)"]
     end
-
-    subgraph REASON ["🧠 REASON (Claude 4.5)"]
-        direction TB
-        CONTEXT["Strategic Context<br/>Document"] --> THINK["Extended Thinking<br/>(Multi-Step Deduction)"]
-        THINK --> STRAT["Strategy<br/>Synthesis"]
+    
+    subgraph ETL["⚙️ ETL Pipeline"]
+        Clean["Data Cleaning<br/>Currency/Date Parsing"]
+        Merge["Multi-File Merge<br/>Deduplication"]
+        Engineer["Feature Engineering<br/>Derived Columns"]
     end
-
-    subgraph ACT ["⚡ ACT (python-docx)"]
-        direction TB
-        VAL["Actionable<br/>Recommendations"] --> DOC["Automated DOCX<br/>Generation"]
-        DOC --> REPORT["12-Page Strategy<br/>Playbook"]
+    
+    subgraph Analysis["🐍 Python Analysis Engine (15+ Modules)"]
+        Menu["Menu Engineering<br/>(BCG Classification)"]
+        Basket["Basket Analysis<br/>(Lift Calculation)"]
+        Customer["Customer Analytics<br/>(Churn/LTV)"]
+        Employee["Employee Performance<br/>(Shift-Normalized)"]
+        Time["Time Patterns<br/>(Hourly/Daily/Seasonal)"]
+        Modifier["Modifier Analysis<br/>(Attach Rates)"]
     end
+    
+    subgraph AI["🤖 AI Reasoning Layer"]
+        Context["Context Builder<br/>32K rows → 5KB insights"]
+        Claude["Claude Opus 4.5<br/>Extended Thinking"]
+        Generate["Strategic Narrative<br/>& Action Plans"]
+    end
+    
+    subgraph Output["📄 Deliverables"]
+        Report["12-Page DOCX Report"]
+        JSON["Analysis JSON<br/>(For Integrations)"]
+        Charts["Visualizations<br/>(PNG Charts)"]
+    end
+    
+    CSV --> Clean --> Merge --> Engineer
+    Engineer --> Menu & Basket & Customer & Employee & Time & Modifier
+    Menu & Basket & Customer & Employee & Time & Modifier --> Context
+    Context --> Claude --> Generate
+    Generate --> Report & JSON & Charts
 
-    STATS --> CONTEXT
-    STRAT --> VAL
-
-    %% Styling
-    style PERCEIVE fill:#3b82f6,color:#fff
-    style REASON fill:#8b5cf6,color:#fff
-    style ACT fill:#10b981,color:#fff
-```
 
 ### 1. Perception Layer (The "Eyes")
 **Technology:** Python | Pandas | NumPy
