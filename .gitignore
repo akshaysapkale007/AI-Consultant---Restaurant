@@ -1,0 +1,73 @@
+# =============================================================================
+# Restaurant Intelligence System - GitHub Portfolio .gitignore
+# Exposes: README.md, LICENSE, assets/
+# Hides: All source code, data, and proprietary files
+# =============================================================================
+
+# =====================
+# HIDE ALL SOURCE CODE
+# =====================
+*.py
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# =====================
+# HIDE ALL DATA FILES
+# =====================
+*.csv
+*.xlsx
+*.xls
+*.json
+
+# =====================
+# HIDE GENERATED REPORTS
+# =====================
+*.docx
+*.pdf
+*.txt
+
+# =====================
+# HIDE GENERATED CHARTS
+# =====================
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+
+# =====================
+# HIDE PYTHON ENVIRONMENT
+# =====================
+.venv/
+venv/
+env/
+.env
+*.egg-info/
+dist/
+build/
+
+# =====================
+# HIDE TEMP/SYSTEM FILES
+# =====================
+~$*
+*.tmp
+*.temp
+*.log
+*.bak
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# =====================
+# EXPOSE PORTFOLIO ASSETS
+# =====================
+!README.md
+!LICENSE
+!.gitignore
+
+# Assets folder for screenshots/demos (if you add one later)
+!assets/
+!assets/**
