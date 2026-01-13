@@ -4,7 +4,7 @@
 
 Not a dashboard. Not a chatbot. **A fully autonomous business strategist.**
 
-<img src="assets/dashboard_hero.png" width="600" alt="Executive Dashboard">
+<img src="assets/dashboard_hero.png" width="500" alt="Executive Dashboard">
 
 ---
 
@@ -44,7 +44,7 @@ What if AI didn't just analyze your data—but thought like a $500/hour consulta
 
 ⏱️ **Total time:** 4 minutes. Zero human input required.
 
-<img src="assets/feature_architecture.png" width="600" alt="System Architecture">
+<img src="assets/feature_architecture.png" width="500" alt="System Architecture">
 
 ---
 
@@ -116,6 +116,39 @@ flowchart LR
 ---
 
 ## 🔬 Engineering Deep Dive
+
+### 🪄 The Data Pipeline
+
+To solve the "Context Limit" problem, I built a custom intelligence pipeline that compresses mountains of data into strategic gold.
+
+```mermaid
+graph LR
+    subgraph INGEST ["📥 INGEST"]
+        A[32,000+ Raw Rows<br/>~8MB CSV]
+    end
+
+    subgraph PROCESS ["🐍 PROCESS"]
+        B[15+ Statistical<br/>Engines]
+    end
+
+    subgraph COMPRESS ["🗜️ COMPRESS"]
+        C["Structured Context<br/>(5KB Strategic XML)"]
+    end
+
+    subgraph REASON ["🧠 REASON"]
+        D[Claude 4.5<br/>Extended Thinking]
+    end
+
+    subgraph OUTPUT ["📄 OUTPUT"]
+        E[12-Page DOCX<br/>Playbook]
+    end
+
+    A --> B --> C --> D --> E
+
+    style COMPRESS fill:#f9f,stroke:#333,stroke-width:2px
+    style PROCESS fill:#3b82f6,color:#fff
+    style REASON fill:#8b5cf6,color:#fff
+```
 
 ### 🤖 Why Claude Opus 4.5?
 
