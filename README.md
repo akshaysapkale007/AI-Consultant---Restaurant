@@ -124,38 +124,50 @@ flowchart TB
 
 ## 🔬 Engineering Deep Dive
 
-### 🪄 The Data Pipeline
+### 🪄 The Data Pipeline Architecture
 
 To solve the "Context Limit" problem, I built a custom intelligence pipeline that compresses mountains of data into strategic gold.
 
-```mermaid
-graph LR
-    subgraph INGEST ["📥 INGEST"]
-        A[32,000+ Raw Rows<br/>~8MB CSV]
-    end
-
-    subgraph PROCESS ["🐍 PROCESS"]
-        B[15+ Statistical<br/>Engines]
-    end
-
-    subgraph COMPRESS ["🗜️ COMPRESS"]
-        C["Structured Context<br/>(5KB Strategic XML)"]
-    end
-
-    subgraph REASON ["🧠 REASON"]
-        D[Claude 4.5<br/>Extended Thinking]
-    end
-
-    subgraph OUTPUT ["📄 OUTPUT"]
-        E[12-Page DOCX<br/>Playbook]
-    end
-
-    A --> B --> C --> D --> E
-
-    style COMPRESS fill:#f9f,stroke:#333,stroke-width:2px
-    style PROCESS fill:#3b82f6,color:#fff
-    style REASON fill:#8b5cf6,color:#fff
 ```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                        THE INTELLIGENCE PIPELINE                            │
+├─────────────────────────────────────────────────────────────────────────────┤
+│                                                                             │
+│   📊 32,000+ Raw Transactions                                               │
+│              │                                                              │
+│              ▼                                                              │
+│   ┌─────────────────────────────────────────────────────────────────┐      │
+│   │              🐍 PYTHON ANALYSIS ENGINE                          │      │
+│   │  • Menu Engineering (BCG Matrix classification)                 │      │
+│   │  • Basket Analysis (Support, Confidence, Lift calculations)     │      │
+│   │  • Churn Detection (cohort-based customer analysis)            │      │
+│   │  • Shift-Normalized Employee Performance                        │      │
+│   │  • Time Pattern Analysis (hourly/daily/seasonal)               │      │
+│   │  • 15+ specialized analysis modules                             │      │
+│   └──────────────────────────┬──────────────────────────────────────┘      │
+│                              │                                              │
+│                              ▼                                              │
+│   ┌─────────────────────────────────────────────────────────────────┐      │
+│   │        📋 STRUCTURED CONTEXT DOCUMENT (~5KB vs 8MB)             │      │
+│   │  Pre-calculated metrics, classifications, trends, alerts        │      │
+│   └──────────────────────────┬──────────────────────────────────────┘      │
+│                              │                                              │
+│                              ▼                                              │
+│   ┌─────────────────────────────────────────────────────────────────┐      │
+│   │              🤖 CLAUDE OPUS 4.5 (Extended Thinking)             │      │
+│   │  • Strategic interpretation of pre-calculated data              │      │
+│   │  • Natural language explanations for business owners            │      │
+│   │  • ROI projections and action plan generation                   │      │
+│   │  • Cross-metric insight synthesis                                │      │
+│   └──────────────────────────┬──────────────────────────────────────┘      │
+│                              │                                              │
+│                              ▼                                              │
+│   📄 12-Page Professional Intelligence Report (DOCX)                        │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+**The result?** Python handles the **computation**, AI handles the **communication** — each doing what it does best.
 
 ### 🤖 Why Claude Opus 4.5?
 
