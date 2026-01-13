@@ -124,50 +124,47 @@ flowchart TB
 
 ## 🔬 Engineering Deep Dive
 
-### 🪄 The Data Pipeline Architecture
+### 🪄 Data Pipeline Architecture
 
-To solve the "Context Limit" problem, I built a custom intelligence pipeline that compresses mountains of data into strategic gold.
-
+```mermaid
+flowchart TB
+    subgraph Input["📊 Data Ingestion"]
+        CSV["POS Export Files<br/>(Multiple CSVs)"]
+    end
+    
+    subgraph ETL["⚙️ ETL Pipeline"]
+        Clean["Data Cleaning<br/>Currency/Date Parsing"]
+        Merge["Multi-File Merge<br/>Deduplication"]
+        Engineer["Feature Engineering<br/>Derived Columns"]
+    end
+    
+    subgraph Analysis["🐍 Python Analysis Engine (15+ Modules)"]
+        Menu["Menu Engineering<br/>(BCG Classification)"]
+        Basket["Basket Analysis<br/>(Lift Calculation)"]
+        Customer["Customer Analytics<br/>(Churn/LTV)"]
+        Employee["Employee Performance<br/>(Shift-Normalized)"]
+        Time["Time Patterns<br/>(Hourly/Daily/Seasonal)"]
+        Modifier["Modifier Analysis<br/>(Attach Rates)"]
+    end
+    
+    subgraph AI["🤖 AI Reasoning Layer"]
+        Context["Context Builder<br/>32K rows → 5KB insights"]
+        Claude["Claude Opus 4.5<br/>Extended Thinking"]
+        Generate["Strategic Narrative<br/>& Action Plans"]
+    end
+    
+    subgraph Output["📄 Deliverables"]
+        Report["12-Page DOCX Report"]
+        JSON["Analysis JSON<br/>(For Integrations)"]
+        Charts["Visualizations<br/>(PNG Charts)"]
+    end
+    
+    CSV --> Clean --> Merge --> Engineer
+    Engineer --> Menu & Basket & Customer & Employee & Time & Modifier
+    Menu & Basket & Customer & Employee & Time & Modifier --> Context
+    Context --> Claude --> Generate
+    Generate --> Report & JSON & Charts
 ```
-┌─────────────────────────────────────────────────────────────────────────────┐
-│                        THE INTELLIGENCE PIPELINE                            │
-├─────────────────────────────────────────────────────────────────────────────┤
-│                                                                             │
-│   📊 32,000+ Raw Transactions                                               │
-│              │                                                              │
-│              ▼                                                              │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │              🐍 PYTHON ANALYSIS ENGINE                          │      │
-│   │  • Menu Engineering (BCG Matrix classification)                 │      │
-│   │  • Basket Analysis (Support, Confidence, Lift calculations)     │      │
-│   │  • Churn Detection (cohort-based customer analysis)            │      │
-│   │  • Shift-Normalized Employee Performance                        │      │
-│   │  • Time Pattern Analysis (hourly/daily/seasonal)               │      │
-│   │  • 15+ specialized analysis modules                             │      │
-│   └──────────────────────────┬──────────────────────────────────────┘      │
-│                              │                                              │
-│                              ▼                                              │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │        📋 STRUCTURED CONTEXT DOCUMENT (~5KB vs 8MB)             │      │
-│   │  Pre-calculated metrics, classifications, trends, alerts        │      │
-│   └──────────────────────────┬──────────────────────────────────────┘      │
-│                              │                                              │
-│                              ▼                                              │
-│   ┌─────────────────────────────────────────────────────────────────┐      │
-│   │              🤖 CLAUDE OPUS 4.5 (Extended Thinking)             │      │
-│   │  • Strategic interpretation of pre-calculated data              │      │
-│   │  • Natural language explanations for business owners            │      │
-│   │  • ROI projections and action plan generation                   │      │
-│   │  • Cross-metric insight synthesis                                │      │
-│   └──────────────────────────┬──────────────────────────────────────┘      │
-│                              │                                              │
-│                              ▼                                              │
-│   📄 12-Page Professional Intelligence Report (DOCX)                        │
-│                                                                             │
-└─────────────────────────────────────────────────────────────────────────────┘
-```
-
-**The result?** Python handles the **computation**, AI handles the **communication** — each doing what it does best.
 
 ### 🤖 Why Claude Opus 4.5?
 
