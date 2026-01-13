@@ -4,7 +4,7 @@
 
 Not a dashboard. Not a chatbot. **A fully autonomous business strategist.**
 
-![Executive Dashboard](assets/dashboard_hero.png)
+<img src="assets/dashboard_hero.png" width="600" alt="Executive Dashboard">
 
 ---
 
@@ -44,7 +44,7 @@ What if AI didn't just analyze your data—but thought like a $500/hour consulta
 
 ⏱️ **Total time:** 4 minutes. Zero human input required.
 
-![System Architecture](assets/feature_architecture.png)
+<img src="assets/feature_architecture.png" width="600" alt="System Architecture">
 
 ---
 
@@ -69,29 +69,32 @@ The first deployment identified **$47,000+ in annual revenue opportunities** the
 RestoAI isn't a simple script wrapper. It operates on a **Perception-Reasoning-Action** loop designed to mimic a human analyst's workflow:
 
 ```mermaid
-graph TD
-    subgraph "Perception Layer (Python)"
-        A[Raw POS Transaction Logs] --> B[ETL & Normalization]
-        B --> C{15+ Statistical Engines}
-        C -->|BCG Matrix| D[Menu Intelligence]
-        C -->|Apriori| E[Basket Analysis]
-        C -->|Cohort| F[Churn Detection]
-        C -->|Shift-Norm| G[Labor Metrics]
+flowchart LR
+    subgraph PERCEIVE ["🔍 PERCEIVE (Python)"]
+        direction TB
+        DATA["Raw POS Logs<br/>(Toast/Square)"] --> ETL["ETL & Data<br/>Normalization"]
+        ETL --> STATS["15+ Statistical<br/>Engines"]
     end
 
-    subgraph "Reasoning Layer (Claude 4.5 Opus)"
-        H[Strategic Context Vector] --> I[Extended Thinking Mode]
-        I --> J[Multi-Step Strategy Planning]
-        J --> K[Actionable Recommendations]
+    subgraph REASON ["🧠 REASON (Claude 4.5)"]
+        direction TB
+        CONTEXT["Strategic Context<br/>Document"] --> THINK["Extended Thinking<br/>(Multi-Step Deduction)"]
+        THINK --> STRAT["Strategy<br/>Synthesis"]
     end
 
-    subgraph "Action Layer (python-docx)"
-        L[Automated DOCX Generation]
-        K --> L
-        L --> M[12-Page Strategy Playbook]
+    subgraph ACT ["⚡ ACT (python-docx)"]
+        direction TB
+        VAL["Actionable<br/>Recommendations"] --> DOC["Automated DOCX<br/>Generation"]
+        DOC --> REPORT["12-Page Strategy<br/>Playbook"]
     end
 
-    D & E & F & G --> H
+    STATS --> CONTEXT
+    STRAT --> VAL
+
+    %% Styling
+    style PERCEIVE fill:#3b82f6,color:#fff
+    style REASON fill:#8b5cf6,color:#fff
+    style ACT fill:#10b981,color:#fff
 ```
 
 ### 1. Perception Layer (The "Eyes")
