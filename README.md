@@ -1,18 +1,56 @@
-# RestoAI: Your AI Business Consultant
+# 🍽️ RestoAI
 
-### An autonomous agent that thinks like a $500/hour strategist — built for restaurants, adaptable to any industry.
+### Your Restaurant's Data is a Goldmine. This Agent Turns It Into a $47K Strategy—In 4 Minutes.
 
-> **What if you could hire a consultant who works 24/7, never forgets a data point, and costs nothing after deployment?**
-
-This is a proof-of-concept for **domain-specific AI consulting**: an agent that ingests raw business data, applies rigorous statistical analysis, and delivers actionable strategy with projected ROI.
-
-**This version is specialized for restaurants.** But the architecture — perception, reasoning, action — is designed to be retrained for retail, healthcare, SaaS, logistics, or any data-rich business.
+Not a dashboard. Not a chatbot. **A fully autonomous business strategist.**
 
 ![Executive Dashboard](assets/dashboard_hero.png)
 
 ---
 
-## � What This Agent Delivers
+## 🎯 The Problem
+
+Running a restaurant is brutal. You're drowning in data but starving for answers.
+
+Every restaurant owner faces the same impossible choice:
+
+- 💸 **Hire a consultant** — $10,000–$25,000, weeks of waiting, generic advice
+- 📊 **Do it yourself in Excel** — 20+ hours of manual analysis, still only scratching the surface
+- 🤖 **Ask ChatGPT** — Token limits, hallucinated numbers, no statistical rigor
+- 📉 **Do nothing** — Watch menu items die, VIP customers churn, and labor costs bleed money
+
+Meanwhile, your competitors are already optimizing.
+
+**The real problem?** You have 32,000+ transactions sitting in a CSV file that could tell you exactly:
+- Which menu items are losing money
+- Which VIP customers stopped coming
+- When you're overstaffed (and hemorrhaging cash)
+- What upsells you're missing
+
+But extracting that intelligence manually? Impossible.
+
+---
+
+## 💡 The Solution: Autonomous Business Intelligence
+
+What if AI didn't just analyze your data—but thought like a $500/hour consultant?
+
+**RestoAI is a Level 3 Autonomous Agent.** Give it your POS data, and it:
+
+1. **Ingests** — Processes 32,000+ messy transactions from Toast, Square, or any POS system
+2. **Analyzes** — Runs 15+ statistical models (BCG Matrix, Market Basket Analysis, Cohort Churn, Time-Series Forecasting)
+3. **Reasons** — Uses Claude Opus 4.5's Extended Thinking to connect insights and generate strategy
+4. **Delivers** — A 12-page professional consultant report with a 90-day action plan
+
+⏱️ **Total time:** 4 minutes. Zero human input required.
+
+![System Architecture](assets/feature_architecture.png)
+
+---
+
+## 💰 What This Agent Delivers
+
+The first deployment identified **$47,000+ in annual revenue opportunities** the owner had zero visibility into.
 
 | Impact Area | What It Finds | Real Result |
 |-------------|---------------|-------------|
@@ -26,19 +64,35 @@ This is a proof-of-concept for **domain-specific AI consulting**: an agent that 
 
 ---
 
-## 🚀 How It Works
-
-Most analytics tools show you *what happened*. **RestoAI tells you *what to do about it*.**
-
-![System Architecture](assets/feature_architecture.png)
-
-It ingests your raw POS data, runs 15+ statistical models, then uses AI to reason through the findings and generate a 90-day action plan with projected ROI for every recommendation.
-
----
-
 ## 🧠 Cognitive Architecture
 
 RestoAI isn't a simple script wrapper. It operates on a **Perception-Reasoning-Action** loop designed to mimic a human analyst's workflow:
+
+```mermaid
+graph TD
+    subgraph "Perception Layer (Python)"
+        A[Raw POS Transaction Logs] --> B[ETL & Normalization]
+        B --> C{15+ Statistical Engines}
+        C -->|BCG Matrix| D[Menu Intelligence]
+        C -->|Apriori| E[Basket Analysis]
+        C -->|Cohort| F[Churn Detection]
+        C -->|Shift-Norm| G[Labor Metrics]
+    end
+
+    subgraph "Reasoning Layer (Claude 4.5 Opus)"
+        H[Strategic Context Vector] --> I[Extended Thinking Mode]
+        I --> J[Multi-Step Strategy Planning]
+        J --> K[Actionable Recommendations]
+    end
+
+    subgraph "Action Layer (python-docx)"
+        L[Automated DOCX Generation]
+        K --> L
+        L --> M[12-Page Strategy Playbook]
+    end
+
+    D & E & F & G --> H
+```
 
 ### 1. Perception Layer (The "Eyes")
 **Technology:** Python | Pandas | NumPy
@@ -60,9 +114,9 @@ RestoAI isn't a simple script wrapper. It operates on a **Perception-Reasoning-A
 
 ## 🔬 Engineering Deep Dive
 
-### why_claude.py
-I chose **Claude Opus 4.5** over GPT-4 for one critical reason: **Verifiable Reasoning**.
-Standard LLMs struggle to maintain context across a 12-page financial report. Claude's *Extended Thinking* allows the agent to "plan" the entire narrative arc before writing the first sentence, ensuring the Executive Summary matches the details in the Menu Analysis section.
+### 🤖 Why Claude Opus 4.5?
+
+I chose **Claude Opus 4.5** for the Reasoning Layer due to its state-of-the-art performance in complex enterprise strategy. With its **64K Extended Thinking** window and **92.8% score on AIME 2025 mathematical reasoning**, Claude provides the "investigative depth" necessary to connect 15+ independent data modules into a coherent 12-page playbook. Unlike standard LLMs that often hallucinate math or lose context, Claude’s verifiable reasoning allows it to act as a **Senior Strategy Consultant**, pinpointing non-obvious correlations between labor spikes and menu velocity while maintaining a consistent ROI-focused narrative across long-horizon reports.
 
 ### Solving "Shift Bias"
 Raw data lies. A Friday dinner server always looks better than a Tuesday lunch server.
@@ -104,18 +158,6 @@ Designed for multi-tenant deployment from Day 1:
 #### Trend & Forecasting Engines
 14. **Time-Series Decomposition** — Separates seasonality from true growth
 15. **Anomaly Detection** — Alerts on unusual spikes/drops
-
----
-
-## 📊 Visual Proof
-
-**Menu Intelligence (BCG Matrix)**
-*Automatically identifies "Stars" to protect and "Dogs" to remove.*
-![Menu Engineering](assets/menu_matrix.png)
-
-**Staffing Efficiency Heatmap**
-*Pinpoints exactly when you are overstaffed (bleeding money).*
-![Labor Heatmap](assets/labor_heatmap.png)
 
 ---
 
@@ -178,7 +220,7 @@ Here's what the actual report looks like (anonymized example):
 |-------|------------|--------|
 | **v1.0** | Autonomous Report Generation | ✅ **Production** |
 | **v1.5** | Multi-Location Benchmarking | ✅ **Production** |
-| **v2.0** | Real-time Toast/Square API Hooks | � In Development |
+| **v2.0** | Real-time Toast/Square API Hooks | 🚧 In Development |
 | **v3.0** | "Chat with Data" (RAG Interface) | 📅 Planned |
 
 ---
@@ -221,20 +263,18 @@ This project showcases expertise in:
 
 ## 👨‍💻 About the Developer
 
-**Akshay Sapkale** | AI Engineer & Business Strategist
+**Akshay Sapkale** | AI & Business Strategist
 
 I build autonomous AI systems that solve real business problems. This project emerged from a simple question: *"Can AI replace a $25,000 consultant?"*
 
 The answer was yes—but only if you architect it correctly. Most people try to dump raw data into ChatGPT and hope for magic. I built RestoAI using a rigorous engineering approach: Python handles the math, AI handles the narrative, and the output drives measurable ROI.
 
 **What I bring to your team:**
-- **AI Engineering**: Deep experience with LLM integration, agent frameworks, and production ML systems
+- **AI Engineering**: Deep experience with LLM integration, agent frameworks, and production AI systems
 - **Full-Stack Thinking**: I don't just build models—I build complete solutions from data ingestion to user delivery
 - **Business Focus**: Every technical decision is tied to measurable business impact
 
 This repository demonstrates my ability to independently architect, build, and deploy AI systems that create real value.
-
-**Connect with me:** [LinkedIn](https://linkedin.com/in/akshaysapkale) | [GitHub](https://github.com/akshaysapkale007)
 
 ---
 
